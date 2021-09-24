@@ -10,11 +10,11 @@ class CacheManagerUtils {
       {
       // Cache key
       required dynamic key,
-      // Cache value type
+      // Cache value type [StringValue, BoolValue, IntValue, DoubleValue]
       required ValueType valueType,
-      // TODO if cache is null
+      // Todo if cache is null
       required dynamic actionIfNull,
-      // TODO if cache is not null
+      // Todo if cache is not null
       required dynamic actionIfNotNull}) async {
     switch (valueType) {
       case ValueType.StringValue:
