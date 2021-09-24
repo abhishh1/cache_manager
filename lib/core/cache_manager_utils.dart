@@ -4,11 +4,11 @@ import 'package:cache_manager/core/read_cache_service.dart';
 enum ValueType { StringValue, BoolValue, IntValue, DoubleValue }
 
 class CacheManagerUtils {
-  static conditionalCache(
+  static Future conditionalCache(
       {required dynamic key,
       required ValueType valueType,
-      required Function actionIfNull,
-      required Function actionIfNotNull}) async {
+      required dynamic actionIfNull,
+      required dynamic actionIfNotNull}) async {
     switch (valueType) {
       case ValueType.StringValue:
         {
