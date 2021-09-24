@@ -7,9 +7,14 @@ enum ValueType { StringValue, BoolValue, IntValue, DoubleValue }
 
 class CacheManagerUtils {
   static Future conditionalCache(
-      {required dynamic key,
+      {
+      // Cache key
+      required dynamic key,
+      // Cache value type
       required ValueType valueType,
+      // TODO if cache is null
       required dynamic actionIfNull,
+      // TODO if cache is not null
       required dynamic actionIfNotNull}) async {
     switch (valueType) {
       case ValueType.StringValue:
@@ -56,7 +61,11 @@ class CacheManagerUtils {
   }
 
   static Widget cacheTextBuilder(
-      {required TextStyle textStyle, required dynamic cacheKey}) {
+      {
+      // Textstyle for the cache string
+      required TextStyle textStyle,
+      // Key for the cache
+      required dynamic cacheKey}) {
     return FutureBuilder(
       future: ReadCache.getString(key: cacheKey),
       builder: (context, snaphot) {
