@@ -1,5 +1,7 @@
 import 'package:cache_manager/cache_manager.dart';
 import 'package:cache_manager/core/read_cache_service.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 enum ValueType { StringValue, BoolValue, IntValue, DoubleValue }
 
@@ -51,5 +53,23 @@ class CacheManagerUtils {
         }
         break;
     }
+  }
+
+  static FutureBuilder? cacheTextBuilder(
+      {required TextStyle textStyle, required dynamic cacheKey}) {
+    return FutureBuilder(
+      future: ReadCache.getString(key: cacheKey),
+      builder: (context, snaphot) {
+        if (snaphot.connectionState == ConnectionState.waiting) {
+          return Center(
+              child: SizedBox(
+                  height: 10, width: 10, child: CircularProgressIndicator()));
+        }
+        if (snaphot.hasData) {
+          return Text(snaphot.data.toString(), style: textStyle);
+        }
+        return Text("Invalid cache", style: textStyle);
+      },
+    );
   }
 }
