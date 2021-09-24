@@ -55,7 +55,7 @@ class CacheManagerUtils {
     }
   }
 
-  static FutureBuilder? cacheTextBuilder(
+  static Widget cacheTextBuilder(
       {required TextStyle textStyle, required dynamic cacheKey}) {
     return FutureBuilder(
       future: ReadCache.getString(key: cacheKey),
