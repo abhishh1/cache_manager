@@ -2,7 +2,7 @@ name: cache_manager
 description: Cache manager to store local cache.
 homepage: https://github.com/abhishh1/cache_manager
 
-version: 1.0.0+1
+version: 1.0.0+2
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
