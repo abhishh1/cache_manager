@@ -61,11 +61,7 @@ class CacheManagerUtils {
   }
 
   static Widget cacheTextBuilder(
-      {
-      // Textstyle for the cache string
-      required TextStyle textStyle,
-      // Key for the cache
-      required dynamic cacheKey}) {
+      {required TextStyle textStyle, required dynamic cacheKey}) {
     return FutureBuilder(
       future: ReadCache.getString(key: cacheKey),
       builder: (context, snaphot) {
