@@ -1,7 +1,6 @@
 name: cache_manager
 description: Cache manager to store local cache.
 homepage: https://github.com/abhishh1/cache_manager
-publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
