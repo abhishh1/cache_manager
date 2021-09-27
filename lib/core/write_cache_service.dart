@@ -1,6 +1,7 @@
+import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class WriteCache {
+abstract class WriteCache {
   static Future setString({required String key, required String value}) async {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
@@ -30,5 +31,13 @@ class WriteCache {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
     await sharedPreferences.setStringList(key, value);
+  }
+
+  static Future setJson(
+      {required String key, required Map<String, dynamic> value}) async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    Map<String, dynamic> jsonMap = value;
+    await sharedPreferences.setString(key, jsonEncode(jsonMap));
   }
 }

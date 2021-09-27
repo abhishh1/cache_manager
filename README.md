@@ -22,6 +22,9 @@ dependencies:
 
 
 ### 👀Read cache
+
+🌟```ReadCache.getJson(key)``` : Get JSON stored as cache.
+
 🌟```ReadCache.getString(key)``` : Get string stored as cache.
 
 🌟```ReadCache.getBool(key)``` : Get boolean stored as cache.
@@ -32,6 +35,9 @@ dependencies:
 
 
 ### 🖊Write cache
+
+🌟```WriteCache.setJson(key,value)``` : Set JSON as cache.
+
 🌟```WriteCache.setString(key,value)``` : Set a string as cache.
 
 🌟```WriteCache.setInt(key,value)``` : Set an integer as cache.

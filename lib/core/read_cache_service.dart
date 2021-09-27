@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ReadCache {
@@ -27,5 +28,14 @@ class ReadCache {
         await SharedPreferences.getInstance();
     var cache = sharedPreferences.getDouble(key);
     return cache;
+  }
+
+  static Future getJson({required String key}) async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    dynamic cache = sharedPreferences.getString(key);
+    Map<String, dynamic> jsonMapCache =
+        jsonDecode(cache) as Map<String, dynamic>;
+    return jsonMapCache;
   }
 }
