@@ -1,6 +1,5 @@
 import 'package:cache_manager/cache_manager.dart';
 import 'package:cache_manager/core/read_cache_service.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 enum ValueType { StringValue, BoolValue, IntValue, DoubleValue }

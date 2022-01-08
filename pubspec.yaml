@@ -3,13 +3,12 @@ description: Cache manager to store local cache. Cache manager is wrapper for
   storing various data type(JSON, String, int etc) as the local cache in your Flutter app.
 homepage: https://github.com/abhishh1/cache_manager
 
-version: 1.0.0+3
+version: 1.0.0+4
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  file_picker:
   flutter:
     sdk: flutter
   shared_preferences: null

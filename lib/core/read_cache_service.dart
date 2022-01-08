@@ -38,4 +38,11 @@ class ReadCache {
         jsonDecode(cache) as Map<String, dynamic>;
     return jsonMapCache;
   }
+
+  static Future getStringList({required String key}) async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    var cache = sharedPreferences.getStringList(key);
+    return cache;
+  }
 }
